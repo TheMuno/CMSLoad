@@ -88,11 +88,11 @@ ul li::marker {color: #2e566b;}
    // window.onload = () => {
    window.FinsweetAttributes ||= [];
    window.FinsweetAttributes.push([ 
-      'list',
+      'cmsload',
       (listInstances) => {
          listInstances.forEach(instance => {
 
-            
+
             instance.on('renderitems', (renderedItems) => {
                console.log('New items rendered:', renderedItems);
                // Example: Initialize lazy-loaded iframes, sliders, etc.
