@@ -94,29 +94,40 @@ fs-list-resetix="true"
    // window.onload = () => {
    window.FinsweetAttributes ||= [];
    window.FinsweetAttributes.push([ 
-      'cmsload',
+      // 'cmsload',
+      'list',
       (listInstances) => {
          listInstances.forEach(instance => {
 
 
-            instance.on('renderitems', (renderedItems) => {
-               console.log('New items rendered:', renderedItems);
+            // instance.on('renderitems', (renderedItems) => {
+            //    console.log('New items rendered:', renderedItems);
                // Example: Initialize lazy-loaded iframes, sliders, etc.
+
+
                const root = instance.el || instance.root || document;
+               console.log('root::', root)
                const pageButtons = Array.from(root.querySelectorAll('[fs-list-element="page-button"]'));
+               console.log('pageButtons::', pageButtons)
                if (!pageButtons.length) return;
 
                const numericCount = pageButtons
                   .map(b => b.textContent.trim())
                   .filter(t => /^\d+$/.test(t)).length;
 
+               console.log('numericCount::', numericCount)
+
                const pagination =
                   pageButtons[0].closest('[role="navigation"], .w-pagination-wrapper, .pagination') ||
                   root.querySelector('[role="navigation"], .w-pagination-wrapper, .pagination');
 
+               console.log('pagination::', pageBupaginationttons)
+
                if (!pagination) return;
                pagination.style.display = (numericCount <= 1) ? 'none' : '';
-            });
+
+
+            // });
 
 
             
